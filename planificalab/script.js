@@ -383,3 +383,14 @@ const progressObserver = new IntersectionObserver(entries => {
 }, { threshold: .35 });
 
 progressObserver.observe($(".hero-visual"));
+
+document.querySelectorAll('a[href="#top"]').forEach((boton) => {
+  boton.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
