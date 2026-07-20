@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FBPlanificaLab: experiencia interactiva para aprender a planificar proyectos, gestionar riesgos, tiempos, recursos, presupuesto y seguimiento." />
+  <title>FBPlanifica | Planificación de proyectos FB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-progress" aria-hidden="true"><span id="pageProgress"></span></div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand" aria-label="Ir al inicio">
+        <span class="brand-mark">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="brand-text">FBPlanifica<span>Lab</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#ruta">Ruta</a>
+        <a href="#riesgos">Riesgos</a>
+        <a href="#estructura">EDT</a>
+        <a href="#cronograma">Cronograma</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#presupuesto">Presupuesto</a>
+        <a href="#seguimiento">Seguimiento</a>
+      </nav>
+
+      <a href="#laboratorio" class="btn btn-small btn-primary nav-cta">Abrir laboratorio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-shell">
+      <div class="hero-orb hero-orb-one"></div>
+      <div class="hero-orb hero-orb-two"></div>
+      <div class="hero-grid"></div>
+
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Planeación visual, simple y práctica
+          </div>
+
+          <h1>
+            Convierte una idea en un
+            <span class="text-gradient">proyecto claro y ejecutable</span>
+          </h1>
+
+          <p class="hero-lead">
+            Aprende a anticipar riesgos, dividir el trabajo, estimar tiempos, distribuir recursos,
+            construir presupuestos y medir avances desde una experiencia interactiva.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#ruta" class="btn btn-primary">
+              Comenzar recorrido
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+            <a href="#laboratorio" class="btn btn-secondary">Probar herramientas</a>
+          </div>
+
+          <div class="hero-meta">
+            <div>
+              <strong>7</strong>
+              <span>módulos interactivos</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>responsive</span>
+            </div>
+            <div>
+              <strong>Sin registro</strong>
+              <span>explora y practica</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1" aria-label="Panel visual de planificación">
+          <div class="dashboard-card dashboard-main">
+            <div class="dash-topbar">
+              <div>
+                <span class="dash-label">Proyecto activo</span>
+                <h3>Lanzamiento plataforma web</h3>
+              </div>
+              <span class="status-badge">En curso</span>
+            </div>
+
+            <div class="dash-progress-row">
+              <div>
+                <span>Avance general</span>
+                <strong id="heroProgressValue">68%</strong>
+              </div>
+              <div class="progress-track">
+                <span class="progress-fill" data-progress="68"></span>
+              </div>
+            </div>
+
+            <div class="dash-kpis">
+              <article>
+                <span class="kpi-icon kpi-blue">
+                  <svg viewBox="0 0 24 24"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg>
+                </span>
+                <small>Presupuesto</small>
+                <strong>61%</strong>
+              </article>
+              <article>
+                <span class="kpi-icon kpi-cyan">
+                  <svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg>
+                </span>
+                <small>Tareas</small>
+                <strong>14/20</strong>
+              </article>
+              <article>
+                <span class="kpi-icon kpi-orange">
+                  <svg viewBox="0 0 24 24"><path d="M12 9v4m0 4h.01M10.3 3.7 2.7 17a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3L13.7 3.7a2 2 0 0 0-3.4 0Z"/></svg>
+                </span>
+                <small>Riesgos</small>
+                <strong>3</strong>
+              </article>
+            </div>
+
+            <div class="mini-gantt">
+              <div class="mini-gantt-head">
+                <span>Actividad</span>
+                <span>S1</span><span>S2</span><span>S3</span><span>S4</span>
+              </div>
+              <div class="mini-row">
+                <span>Investigación</span>
+                <i class="mini-bar bar-1"></i>
+              </div>
+              <div class="mini-row">
+                <span>Diseño UX</span>
+                <i class="mini-bar bar-2"></i>
+              </div>
+              <div class="mini-row">
+                <span>Desarrollo</span>
+                <i class="mini-bar bar-3"></i>
+              </div>
+              <div class="mini-row">
+                <span>Pruebas</span>
+                <i class="mini-bar bar-4"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card floating-risk">
+            <span class="float-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3Zm0 6v5m0 3h.01"/></svg>
+            </span>
+            <div>
+              <small>Nivel de riesgo</small>
+              <strong>Moderado</strong>
+            </div>
+          </div>
+
+          <div class="floating-card floating-time">
+            <span class="float-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div>
+              <small>Tiempo restante</small>
+              <strong>18 días</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-cue">
+        <span>Explora</span>
+        <i></i>
+      </div>
+    </section>
+
+    <section class="trusted-strip" aria-label="Conceptos principales">
+      <div class="container trusted-inner">
+        <span>RIESGOS</span>
+        <span>ACTIVIDADES</span>
+        <span>TIEMPOS</span>
+        <span>RECURSOS</span>
+        <span>PRESUPUESTO</span>
+        <span>SEGUIMIENTO</span>
+      </div>
+    </section>
+
+    <section class="section-shell route-section" id="ruta">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Ruta de planificación</div>
+          <h2>Un proyecto sólido se construye paso a paso</h2>
+          <p>
+            Cada etapa responde una pregunta distinta. Recorre el proceso y descubre cómo se conectan
+            las decisiones desde la idea inicial hasta el control del avance.
+          </p>
+        </div>
+
+        <div class="route-timeline">
+          <div class="route-line"></div>
+
+          <article class="route-step reveal">
+            <div class="route-number">01</div>
+            <div class="route-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3Zm0 6v5m0 3h.01"/></svg>
+            </div>
+            <h3>Anticipa riesgos</h3>
+            <p>Detecta amenazas, estima su impacto y prepara respuestas antes de que el problema aparezca.</p>
+          </article>
+
+          <article class="route-step reveal delay-1">
+            <div class="route-number">02</div>
+            <div class="route-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v4H4zM4 15h7v4H4zM15 15h5v4h-5zM12 9v3m-5 0h11"/></svg>
+            </div>
+            <h3>Divide el trabajo</h3>
+            <p>Convierte un objetivo amplio en fases, entregables, actividades y tareas manejables.</p>
+          </article>
+
+          <article class="route-step reveal delay-2">
+            <div class="route-number">03</div>
+            <div class="route-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M7 15h4v3H7zm5-6h4v9h-4zm5 3h3v6h-3z"/></svg>
+            </div>
+            <h3>Ordena el tiempo</h3>
+            <p>Define duraciones, dependencias, hitos y una secuencia lógica para ejecutar el proyecto.</p>
+          </article>
+
+          <article class="route-step reveal delay-3">
+            <div class="route-number">04</div>
+            <div class="route-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-1a3 3 0 1 0 0-6M2 21v-2a6 6 0 0 1 12 0v2m2-7a5 5 0 0 1 6 5v2"/></svg>
+            </div>
+            <h3>Asigna recursos</h3>
+            <p>Equilibra personas, herramientas y materiales de acuerdo con la necesidad real de cada actividad.</p>
+          </article>
+
+          <article class="route-step reveal delay-4">
+            <div class="route-number">05</div>
+            <div class="route-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM7 10h4m-4 4h8m2-4h.01"/></svg>
+            </div>
+            <h3>Calcula el costo</h3>
+            <p>Integra personal, materiales, servicios y reservas para obtener un presupuesto realista.</p>
+          </article>
+
+          <article class="route-step reveal delay-5">
+            <div class="route-number">06</div>
+            <div class="route-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg>
+            </div>
+            <h3>Mide y mejora</h3>
+            <p>Compara lo realizado con lo previsto y toma decisiones antes de que una desviación crezca.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell soft-section" id="riesgos">
+      <div class="container split-intro">
+        <div class="section-heading reveal">
+          <div class="eyebrow">01 · Gestión de riesgos</div>
+          <h2>Decide qué hacer antes de que ocurra</h2>
+          <p>
+            No todos los riesgos necesitan la misma respuesta. La probabilidad y el impacto permiten
+            priorizar esfuerzos y elegir una estrategia adecuada.
+          </p>
+          <ul class="feature-list">
+            <li><span></span>Identifica la causa, no solo el síntoma.</li>
+            <li><span></span>Define alertas tempranas y responsables.</li>
+            <li><span></span>Prepara acciones preventivas y planes de contingencia.</li>
+          </ul>
+        </div>
+
+        <div class="risk-preview reveal delay-1">
+          <div class="risk-preview-top">
+            <div>
+              <small>Riesgo seleccionado</small>
+              <h3>Retraso en la entrega</h3>
+            </div>
+            <span class="risk-level risk-high">Alto</span>
+          </div>
+          <div class="risk-preview-body">
+            <div class="risk-meter">
+              <span>Probabilidad</span>
+              <div><i style="width:78%"></i></div>
+              <strong>78%</strong>
+            </div>
+            <div class="risk-meter">
+              <span>Impacto</span>
+              <div><i style="width:86%"></i></div>
+              <strong>86%</strong>
+            </div>
+            <div class="risk-action-box">
+              <small>Respuesta recomendada</small>
+              <strong>Reducir y preparar contingencia</strong>
+              <p>Agregar margen de tiempo, revisar dependencias críticas y preparar recursos alternos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="laboratorio">
+        <div class="tool-card risk-tool reveal">
+          <div class="tool-card-head">
+            <div>
+              <span class="tool-kicker">Laboratorio</span>
+              <h3>Matriz interactiva de riesgos</h3>
+            </div>
+            <span class="tool-pill">Calcula tu estrategia</span>
+          </div>
+
+          <div class="risk-tool-layout">
+            <form class="risk-form" id="riskForm">
+              <label>
+                Nombre del riesgo
+                <input type="text" id="riskName" value="Retraso del proveedor" />
+              </label>
+
+              <div class="range-field">
+                <div class="range-label">
+                  <span>Probabilidad</span>
+                  <strong id="probabilityValue">60%</strong>
+                </div>
+                <input type="range" id="probabilityRange" min="0" max="100" value="60" />
+              </div>
+
+              <div class="range-field">
+                <div class="range-label">
+                  <span>Impacto</span>
+                  <strong id="impactValue">75%</strong>
+                </div>
+                <input type="range" id="impactRange" min="0" max="100" value="75" />
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Evaluar riesgo</button>
+
+              <div class="risk-result" id="riskResult">
+                <span class="result-dot"></span>
+                <div>
+                  <small>Resultado</small>
+                  <strong>Riesgo alto</strong>
+                  <p>Reduce la probabilidad y prepara una respuesta de contingencia.</p>
+                </div>
+              </div>
+            </form>
+
+            <div class="risk-matrix" id="riskMatrix">
+              <div class="matrix-label matrix-y">IMPACTO</div>
+              <div class="matrix-label matrix-x">PROBABILIDAD</div>
+              <div class="matrix-grid">
+                <button class="matrix-cell cell-medium" data-prob="25" data-impact="75">
+                  <span>Baja prob.</span><strong>Impacto alto</strong>
+                </button>
+                <button class="matrix-cell cell-critical" data-prob="75" data-impact="75">
+                  <span>Alta prob.</span><strong>Impacto alto</strong>
+                </button>
+                <button class="matrix-cell cell-low" data-prob="25" data-impact="25">
+                  <span>Baja prob.</span><strong>Impacto bajo</strong>
+                </button>
+                <button class="matrix-cell cell-medium" data-prob="75" data-impact="25">
+                  <span>Alta prob.</span><strong>Impacto bajo</strong>
+                </button>
+                <span class="matrix-marker" id="matrixMarker"></span>
+              </div>
+              <div class="matrix-scale-y"><span>Alto</span><span>Bajo</span></div>
+              <div class="matrix-scale-x"><span>Bajo</span><span>Alto</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="estructura">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">02 · Del objetivo a las tareas</div>
+          <h2>Descompón lo complejo hasta hacerlo manejable</h2>
+          <p>
+            Una buena estructura de trabajo convierte una meta general en entregables claros,
+            actividades medibles y responsabilidades concretas.
+          </p>
+        </div>
+
+        <div class="diagram-tabs reveal">
+          <button class="diagram-tab active" data-diagram="mindmap">Mapa mental</button>
+          <button class="diagram-tab" data-diagram="wbs">Estructura EDT</button>
+        </div>
+
+        <div class="diagram-stage reveal delay-1">
+          <div class="diagram-panel active" id="mindmapPanel">
+            <svg class="mindmap-lines" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M500 280 C400 260, 330 130, 210 110"/>
+              <path d="M500 280 C600 240, 700 120, 830 110"/>
+              <path d="M500 280 C390 310, 300 420, 170 445"/>
+              <path d="M500 280 C610 320, 710 430, 835 450"/>
+              <path d="M500 280 C500 370, 500 430, 500 500"/>
+            </svg>
+
+            <button class="mind-node node-center">
+              <span>PROYECTO</span>
+              <strong>Plataforma educativa</strong>
+            </button>
+
+            <button class="mind-node node-one" data-detail="Define qué se entregará, qué queda fuera y cuál es el resultado esperado.">
+              <span>ALCANCE</span>
+              <strong>Objetivos y límites</strong>
+            </button>
+
+            <button class="mind-node node-two" data-detail="Identifica incertidumbres técnicas, operativas, financieras y humanas.">
+              <span>RIESGOS</span>
+              <strong>Amenazas y respuestas</strong>
+            </button>
+
+            <button class="mind-node node-three" data-detail="Ordena las fases, entregables, actividades, tareas y dependencias.">
+              <span>ACTIVIDADES</span>
+              <strong>Trabajo organizado</strong>
+            </button>
+
+            <button class="mind-node node-four" data-detail="Asigna personas, herramientas, materiales y disponibilidad.">
+              <span>RECURSOS</span>
+              <strong>Capacidad disponible</strong>
+            </button>
+
+            <button class="mind-node node-five" data-detail="Define indicadores, reuniones, hitos y fuentes de verificación.">
+              <span>SEGUIMIENTO</span>
+              <strong>Control y mejora</strong>
+            </button>
+
+            <div class="mind-detail" id="mindDetail">
+              <small>Selecciona un nodo</small>
+              <p>Explora cada elemento del mapa para conocer su función dentro de la planificación.</p>
+            </div>
+          </div>
+
+          <div class="diagram-panel" id="wbsPanel">
+            <div class="wbs-tree">
+              <div class="wbs-level level-root">
+                <button class="wbs-box root-box">
+                  <span>0.0</span>
+                  <strong>Plataforma educativa</strong>
+                </button>
+              </div>
+
+              <div class="wbs-connect vertical"></div>
+
+              <div class="wbs-level level-two">
+                <button class="wbs-box">
+                  <span>1.0</span>
+                  <strong>Investigación</strong>
+                  <small>2 entregables</small>
+                </button>
+                <button class="wbs-box">
+                  <span>2.0</span>
+                  <strong>Diseño</strong>
+                  <small>3 entregables</small>
+                </button>
+                <button class="wbs-box">
+                  <span>3.0</span>
+                  <strong>Desarrollo</strong>
+                  <small>4 entregables</small>
+                </button>
+                <button class="wbs-box">
+                  <span>4.0</span>
+                  <strong>Validación</strong>
+                  <small>2 entregables</small>
+                </button>
+              </div>
+
+              <div class="wbs-children">
+                <div class="wbs-child-group">
+                  <button class="wbs-mini"><span>1.1</span> Requisitos</button>
+                  <button class="wbs-mini"><span>1.2</span> Benchmark</button>
+                </div>
+                <div class="wbs-child-group">
+                  <button class="wbs-mini"><span>2.1</span> Arquitectura</button>
+                  <button class="wbs-mini"><span>2.2</span> Prototipo</button>
+                  <button class="wbs-mini"><span>2.3</span> UI Kit</button>
+                </div>
+                <div class="wbs-child-group">
+                  <button class="wbs-mini"><span>3.1</span> Frontend</button>
+                  <button class="wbs-mini"><span>3.2</span> Backend</button>
+                  <button class="wbs-mini"><span>3.3</span> Datos</button>
+                  <button class="wbs-mini"><span>3.4</span> Integración</button>
+                </div>
+                <div class="wbs-child-group">
+                  <button class="wbs-mini"><span>4.1</span> Pruebas</button>
+                  <button class="wbs-mini"><span>4.2</span> Entrega</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="wbs-note">
+              <span class="note-icon">i</span>
+              <p>Detén la división cuando cada paquete sea suficientemente pequeño para asignarlo, estimarlo y medir su resultado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell soft-section" id="cronograma">
+      <div class="container split-heading">
+        <div class="section-heading reveal">
+          <div class="eyebrow">03 · Cronograma</div>
+          <h2>Visualiza el tiempo, las dependencias y los hitos</h2>
+        </div>
+        <p class="section-side-copy reveal delay-1">
+          El diagrama de Gantt muestra qué ocurre, cuándo comienza, cuánto dura y qué tareas dependen de otras.
+          También permite comparar el plan original con el avance real.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="gantt-card reveal">
+          <div class="gantt-toolbar">
+            <div>
+              <span class="tool-kicker">Cronograma de ejemplo</span>
+              <h3>Lanzamiento de producto digital</h3>
+            </div>
+            <div class="gantt-legend">
+              <span><i class="legend-plan"></i>Planificado</span>
+              <span><i class="legend-progress"></i>Completado</span>
+              <span><i class="legend-milestone"></i>Hito</span>
+            </div>
+          </div>
+
+          <div class="gantt-scroll">
+            <div class="gantt-table">
+              <div class="gantt-header gantt-name">Actividad</div>
+              <div class="gantt-header">S1</div>
+              <div class="gantt-header">S2</div>
+              <div class="gantt-header">S3</div>
+              <div class="gantt-header">S4</div>
+              <div class="gantt-header">S5</div>
+              <div class="gantt-header">S6</div>
+              <div class="gantt-header">S7</div>
+              <div class="gantt-header">S8</div>
+
+              <div class="gantt-task gantt-name"><strong>Investigación</strong><small>5 días</small></div>
+              <div class="gantt-cell span-2 start-1"><span class="gantt-bar complete-100">100%</span></div>
+
+              <div class="gantt-task gantt-name"><strong>Arquitectura</strong><small>7 días</small></div>
+              <div class="gantt-cell span-2 start-2"><span class="gantt-bar complete-100">100%</span></div>
+
+              <div class="gantt-task gantt-name"><strong>Diseño UX/UI</strong><small>12 días</small></div>
+              <div class="gantt-cell span-3 start-2"><span class="gantt-bar complete-85">85%</span></div>
+
+              <div class="gantt-task gantt-name"><strong>Desarrollo</strong><small>20 días</small></div>
+              <div class="gantt-cell span-4 start-4"><span class="gantt-bar complete-55">55%</span></div>
+
+              <div class="gantt-task gantt-name"><strong>Pruebas</strong><small>8 días</small></div>
+              <div class="gantt-cell span-2 start-6"><span class="gantt-bar complete-10">10%</span></div>
+
+              <div class="gantt-task gantt-name"><strong>Entrega final</strong><small>Hito</small></div>
+              <div class="gantt-cell milestone-cell start-8"><span class="milestone-shape"></span></div>
+
+              <div class="today-line"><span>HOY</span></div>
+            </div>
+          </div>
+
+          <div class="gantt-insights">
+            <article>
+              <span class="insight-icon">
+                <svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg>
+              </span>
+              <div><strong>3 tareas</strong><small>completadas o casi listas</small></div>
+            </article>
+            <article>
+              <span class="insight-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 7v5l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+              </span>
+              <div><strong>2 semanas</strong><small>para el siguiente hito</small></div>
+            </article>
+            <article>
+              <span class="insight-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 20V10m6 10V4m6 16v-7m4 7H2"/></svg>
+              </span>
+              <div><strong>68%</strong><small>de avance estimado</small></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="estimacion">
+      <div class="container calculator-layout">
+        <div class="section-heading reveal">
+          <div class="eyebrow">04 · Estimación de tiempos</div>
+          <h2>Calcula una duración más realista</h2>
+          <p>
+            Combina un escenario optimista, uno más probable y uno pesimista para evitar depender
+            de una sola estimación.
+          </p>
+
+          <div class="formula-card">
+            <span>Fórmula</span>
+            <strong>T<sub>e</sub> = (T<sub>o</sub> + 4T<sub>m</sub> + T<sub>p</sub>) / 6</strong>
+            <p>El tiempo más probable tiene mayor peso porque representa el escenario habitual.</p>
+          </div>
+        </div>
+
+        <div class="calculator-card reveal delay-1">
+          <div class="calculator-head">
+            <div>
+              <span class="tool-kicker">Calculadora</span>
+              <h3>Estimación ponderada</h3>
+            </div>
+            <span class="calculator-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 3h16v18H4zM8 7h8M8 12h2m4 0h2m-8 4h2m4 0h2"/></svg>
+            </span>
+          </div>
+
+          <form id="timeCalculator">
+            <div class="calc-grid">
+              <label>
+                <span>Optimista</span>
+                <div class="input-with-unit">
+                  <input type="number" id="timeOptimistic" min="0" step="0.5" value="8" />
+                  <small>días</small>
+                </div>
+              </label>
+              <label>
+                <span>Más probable</span>
+                <div class="input-with-unit">
+                  <input type="number" id="timeMostLikely" min="0" step="0.5" value="12" />
+                  <small>días</small>
+                </div>
+              </label>
+              <label>
+                <span>Pesimista</span>
+                <div class="input-with-unit">
+                  <input type="number" id="timePessimistic" min="0" step="0.5" value="20" />
+                  <small>días</small>
+                </div>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Calcular duración</button>
+          </form>
+
+          <div class="calc-result">
+            <div>
+              <small>Tiempo esperado</small>
+              <strong id="expectedTime">12.7 días</strong>
+            </div>
+            <div>
+              <small>Margen sugerido</small>
+              <strong id="bufferTime">+2.5 días</strong>
+            </div>
+            <p id="timeAdvice">Planea una ventana aproximada de 15 días para absorber variaciones razonables.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell soft-section" id="recursos">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">05 · Recursos</div>
+          <h2>La capacidad del equipo también limita el calendario</h2>
+          <p>
+            No basta con saber qué tareas existen. También debes comprobar quién puede realizarlas,
+            con qué herramientas y durante cuánto tiempo.
+          </p>
+        </div>
+
+        <div class="resource-cards">
+          <article class="resource-card reveal">
+            <span class="resource-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-1a3 3 0 1 0 0-6M2 21v-2a6 6 0 0 1 12 0v2m2-7a5 5 0 0 1 6 5v2"/></svg>
+            </span>
+            <h3>Personas</h3>
+            <p>Perfiles, competencias, funciones, disponibilidad y responsabilidades.</p>
+            <span class="resource-tag">Capacidad humana</span>
+          </article>
+
+          <article class="resource-card reveal delay-1">
+            <span class="resource-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16v10H4zM8 21h8M12 17v4M7 4h10"/></svg>
+            </span>
+            <h3>Medios técnicos</h3>
+            <p>Equipo informático, herramientas, infraestructura, software e instalaciones.</p>
+            <span class="resource-tag">Capacidad operativa</span>
+          </article>
+
+          <article class="resource-card reveal delay-2">
+            <span class="resource-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 20V8m5 12V4m5 16v-9m5 9V6"/></svg>
+            </span>
+            <h3>Disponibilidad</h3>
+            <p>Horas por actividad, jornadas parciales, solapamientos y periodos críticos.</p>
+            <span class="resource-tag">Capacidad temporal</span>
+          </article>
+        </div>
+
+        <div class="load-card reveal">
+          <div class="load-card-head">
+            <div>
+              <span class="tool-kicker">Nivelación de recursos</span>
+              <h3>Carga semanal del equipo</h3>
+            </div>
+            <span class="tool-pill tool-pill-light">Semana actual</span>
+          </div>
+
+          <div class="load-grid">
+            <div class="load-list">
+              <div class="load-item">
+                <div class="person">
+                  <span class="avatar">AM</span>
+                  <div><strong>Ana · Diseño</strong><small>32 de 40 h</small></div>
+                </div>
+                <div class="load-track"><span style="width:80%"></span></div>
+                <strong class="load-percent">80%</strong>
+              </div>
+
+              <div class="load-item">
+                <div class="person">
+                  <span class="avatar">JL</span>
+                  <div><strong>Jorge · Desarrollo</strong><small>40 de 40 h</small></div>
+                </div>
+                <div class="load-track"><span style="width:100%"></span></div>
+                <strong class="load-percent">100%</strong>
+              </div>
+
+              <div class="load-item overloaded">
+                <div class="person">
+                  <span class="avatar">RC</span>
+                  <div><strong>Renata · QA</strong><small>46 de 40 h</small></div>
+                </div>
+                <div class="load-track"><span style="width:100%"></span></div>
+                <strong class="load-percent">115%</strong>
+              </div>
+
+              <div class="load-item">
+                <div class="person">
+                  <span class="avatar">DP</span>
+                  <div><strong>Diego · Gestión</strong><small>18 de 40 h</small></div>
+                </div>
+                <div class="load-track"><span style="width:45%"></span></div>
+                <strong class="load-percent">45%</strong>
+              </div>
+            </div>
+
+            <div class="load-alert">
+              <span class="alert-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 3 2 21h20L12 3Zm0 6v5m0 3h.01"/></svg>
+              </span>
+              <small>Atención</small>
+              <h4>Recurso sobreasignado</h4>
+              <p>Renata supera su capacidad semanal en 6 horas.</p>
+              <ul>
+                <li>Mover pruebas no críticas.</li>
+                <li>Reasignar una parte del trabajo.</li>
+                <li>Agregar apoyo temporal.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="presupuesto">
+      <div class="container split-heading">
+        <div class="section-heading reveal">
+          <div class="eyebrow">06 · Presupuesto</div>
+          <h2>Convierte actividades y recursos en costos visibles</h2>
+        </div>
+        <p class="section-side-copy reveal delay-1">
+          El presupuesto se vuelve más confiable cuando cada costo puede relacionarse con una actividad,
+          un recurso o una fuente de financiamiento.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="budget-layout">
+          <div class="budget-table-card reveal">
+            <div class="tool-card-head">
+              <div>
+                <span class="tool-kicker">Simulador</span>
+                <h3>Presupuesto por actividad</h3>
+              </div>
+              <button class="btn btn-secondary btn-small" id="addBudgetRow">Agregar concepto</button>
+            </div>
+
+            <div class="budget-table-wrap">
+              <table class="budget-table">
+                <thead>
+                  <tr>
+                    <th>Concepto</th>
+                    <th>Cantidad</th>
+                    <th>Costo unitario</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="budgetBody">
+                  <tr>
+                    <td><input class="budget-name" value="Diseño de interfaz" /></td>
+                    <td><input class="budget-qty" type="number" min="0" value="40" /></td>
+                    <td><input class="budget-price" type="number" min="0" value="250" /></td>
+                    <td class="budget-subtotal">$10,000</td>
+                    <td><button class="remove-row" aria-label="Eliminar">×</button></td>
+                  </tr>
+                  <tr>
+                    <td><input class="budget-name" value="Desarrollo" /></td>
+                    <td><input class="budget-qty" type="number" min="0" value="80" /></td>
+                    <td><input class="budget-price" type="number" min="0" value="300" /></td>
+                    <td class="budget-subtotal">$24,000</td>
+                    <td><button class="remove-row" aria-label="Eliminar">×</button></td>
+                  </tr>
+                  <tr>
+                    <td><input class="budget-name" value="Infraestructura" /></td>
+                    <td><input class="budget-qty" type="number" min="0" value="3" /></td>
+                    <td><input class="budget-price" type="number" min="0" value="500" /></td>
+                    <td class="budget-subtotal">$1,500</td>
+                    <td><button class="remove-row" aria-label="Eliminar">×</button></td>
+                  </tr>
+                  <tr>
+                    <td><input class="budget-name" value="Pruebas" /></td>
+                    <td><input class="budget-qty" type="number" min="0" value="20" /></td>
+                    <td><input class="budget-price" type="number" min="0" value="200" /></td>
+                    <td class="budget-subtotal">$4,000</td>
+                    <td><button class="remove-row" aria-label="Eliminar">×</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="budget-summary">
+              <div><span>Subtotal</span><strong id="budgetSubtotal">$39,500</strong></div>
+              <div><span>Reserva de riesgo (10%)</span><strong id="budgetReserve">$3,950</strong></div>
+              <div class="budget-total"><span>Total estimado</span><strong id="budgetTotal">$43,450</strong></div>
+            </div>
+          </div>
+
+          <div class="budget-chart-card reveal delay-1">
+            <div class="chart-head">
+              <div>
+                <span class="tool-kicker">Distribución</span>
+                <h3>¿En qué se utiliza?</h3>
+              </div>
+            </div>
+
+            <div class="donut-wrap">
+              <div class="donut" id="budgetDonut">
+                <div class="donut-center">
+                  <small>Total</small>
+                  <strong id="donutTotal">$43.5K</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-legend" id="budgetLegend">
+              <div><span style="--legend:#2563eb"></span><p>Diseño</p><strong>25%</strong></div>
+              <div><span style="--legend:#0ea5e9"></span><p>Desarrollo</p><strong>60%</strong></div>
+              <div><span style="--legend:#38bdf8"></span><p>Infraestructura</p><strong>4%</strong></div>
+              <div><span style="--legend:#93c5fd"></span><p>Pruebas</p><strong>11%</strong></div>
+            </div>
+
+            <div class="budget-tip">
+              <span>Consejo</span>
+              <p>Controla especialmente las horas del equipo: suelen representar la mayor parte del costo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell dashboard-section" id="seguimiento">
+      <div class="dashboard-bg"></div>
+      <div class="container">
+        <div class="section-heading light centered reveal">
+          <div class="eyebrow eyebrow-light">07 · Seguimiento y evaluación</div>
+          <h2>Lo que no se mide, se descubre demasiado tarde</h2>
+          <p>
+            Define indicadores, fuentes de verificación, reuniones y puntos de control desde el inicio.
+          </p>
+        </div>
+
+        <div class="monitor-grid reveal">
+          <article class="monitor-kpi">
+            <span>Avance general</span>
+            <strong>68%</strong>
+            <div class="monitor-progress"><i style="width:68%"></i></div>
+            <small>+8% desde la semana anterior</small>
+          </article>
+
+          <article class="monitor-kpi">
+            <span>Presupuesto consumido</span>
+            <strong>61%</strong>
+            <div class="monitor-progress"><i style="width:61%"></i></div>
+            <small>Dentro de lo previsto</small>
+          </article>
+
+          <article class="monitor-kpi">
+            <span>Horas ejecutadas</span>
+            <strong>412 h</strong>
+            <div class="monitor-progress"><i style="width:74%"></i></div>
+            <small>74% de las horas planificadas</small>
+          </article>
+
+          <article class="monitor-kpi">
+            <span>Riesgos activos</span>
+            <strong>3</strong>
+            <div class="risk-dots"><i></i><i></i><i></i><i class="muted"></i><i class="muted"></i></div>
+            <small>1 requiere atención inmediata</small>
+          </article>
+        </div>
+
+        <div class="monitor-main-grid">
+          <div class="activity-chart-card reveal">
+            <div class="monitor-card-head">
+              <div><small>Progreso semanal</small><h3>Trabajo realizado vs. previsto</h3></div>
+              <span class="status-badge status-light">Últimas 8 semanas</span>
+            </div>
+
+            <div class="line-chart" aria-label="Gráfica de progreso">
+              <div class="chart-grid-lines"><i></i><i></i><i></i><i></i><i></i></div>
+              <svg viewBox="0 0 800 260" preserveAspectRatio="none">
+                <polyline class="line-planned" points="0,220 100,195 200,170 300,145 400,120 500,95 600,70 700,45 800,20"/>
+                <polyline class="line-real" points="0,225 100,205 200,178 300,160 400,135 500,115 600,105 700,78 800,58"/>
+                <circle cx="800" cy="58" r="7" class="line-point"/>
+              </svg>
+              <div class="chart-x-labels">
+                <span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span><span>S8</span>
+              </div>
+            </div>
+
+            <div class="line-chart-legend">
+              <span><i class="planned-line"></i>Previsto</span>
+              <span><i class="real-line"></i>Realizado</span>
+            </div>
+          </div>
+
+          <div class="checkpoints-card reveal delay-1">
+            <div class="monitor-card-head">
+              <div><small>Próximos controles</small><h3>Hitos y reuniones</h3></div>
+            </div>
+
+            <div class="checkpoint-list">
+              <article>
+                <div class="date-box"><strong>22</strong><span>AGO</span></div>
+                <div><strong>Revisión de prototipo</strong><small>10:00 · Equipo de diseño</small></div>
+                <span class="checkpoint-status pending">Pendiente</span>
+              </article>
+              <article>
+                <div class="date-box"><strong>26</strong><span>AGO</span></div>
+                <div><strong>Validación técnica</strong><small>12:30 · Desarrollo y QA</small></div>
+                <span class="checkpoint-status planned">Programado</span>
+              </article>
+              <article>
+                <div class="date-box"><strong>30</strong><span>AGO</span></div>
+                <div><strong>Entrega parcial</strong><small>17:00 · Cliente</small></div>
+                <span class="checkpoint-status milestone">Hito</span>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="indicator-table-card reveal">
+          <div class="monitor-card-head">
+            <div><small>Indicadores</small><h3>Relación entre lo realizado y lo previsto</h3></div>
+          </div>
+          <div class="indicator-table-wrap">
+            <table class="indicator-table">
+              <thead>
+                <tr>
+                  <th>Indicador</th>
+                  <th>Objetivo</th>
+                  <th>Resultado</th>
+                  <th>Fuente de verificación</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Actividades completadas</td>
+                  <td>15</td>
+                  <td>14</td>
+                  <td>Tablero de tareas</td>
+                  <td><span class="table-status warning">Atención</span></td>
+                </tr>
+                <tr>
+                  <td>Presupuesto consumido</td>
+                  <td>≤ 65%</td>
+                  <td>61%</td>
+                  <td>Registro contable</td>
+                  <td><span class="table-status success">Correcto</span></td>
+                </tr>
+                <tr>
+                  <td>Horas ejecutadas</td>
+                  <td>420 h</td>
+                  <td>412 h</td>
+                  <td>Registro de horas</td>
+                  <td><span class="table-status success">Correcto</span></td>
+                </tr>
+                <tr>
+                  <td>Errores críticos abiertos</td>
+                  <td>0</td>
+                  <td>2</td>
+                  <td>Reporte de pruebas</td>
+                  <td><span class="table-status danger">Desviación</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell checklist-section" id="checklist">
+      <div class="container checklist-layout">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Checklist final</div>
+          <h2>¿Tu proyecto está listo para ejecutarse?</h2>
+          <p>
+            Marca cada punto y observa cómo aumenta el nivel de preparación.
+          </p>
+
+          <div class="readiness-card">
+            <div class="readiness-ring" id="readinessRing">
+              <strong id="readinessValue">0%</strong>
+            </div>
+            <div>
+              <small>Nivel de preparación</small>
+              <h3 id="readinessLabel">Comienza tu revisión</h3>
+              <p id="readinessMessage">Completa los puntos esenciales antes de iniciar la ejecución.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-card reveal delay-1">
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="custom-check"></span>
+            <div><strong>Objetivo y alcance definidos</strong><small>El resultado esperado y los límites están claros.</small></div>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="custom-check"></span>
+            <div><strong>Riesgos analizados</strong><small>Se definieron responsables, alertas y respuestas.</small></div>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="custom-check"></span>
+            <div><strong>EDT terminada</strong><small>Las tareas están divididas en paquetes manejables.</small></div>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="custom-check"></span>
+            <div><strong>Cronograma validado</strong><small>Las duraciones y dependencias son realistas.</small></div>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="custom-check"></span>
+            <div><strong>Recursos disponibles</strong><small>No existen sobreasignaciones críticas.</small></div>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="custom-check"></span>
+            <div><strong>Presupuesto aprobado</strong><small>Incluye costos directos y reserva para riesgos.</small></div>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="custom-check"></span>
+            <div><strong>Seguimiento planificado</strong><small>Existen indicadores, fuentes y reuniones.</small></div>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card reveal">
+          <div class="cta-grid"></div>
+          <div>
+            <span class="eyebrow eyebrow-light">Planifica con intención</span>
+            <h2>Una buena idea necesita estructura para convertirse en resultado.</h2>
+            <p>Regresa a cualquier módulo y utiliza las herramientas interactivas para practicar.</p>
+          </div>
+          <a href="#top" class="btn btn-light">
+            Volver al FBinicio
+            <svg viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a href="#top" class="brand footer-brand">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-text">FBPlanifica<span>Lab</span></span>
+      </a>
+      <p>Experiencia educativa para comprender y practicar la planificación de proyectos.</p>
+      <div class="footer-links">
+        <a href="#riesgos">Riesgos</a>
+        <a href="#estructura">EDT</a>
+        <a href="#cronograma">Gantt</a>
+        <a href="#presupuesto">Presupuesto</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 FBEducation</span>
+      <span>Sitio elaborado con fines educativos para la UPP, by FBcorp.</span>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
